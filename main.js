@@ -32,7 +32,19 @@ function showStep(n) {
 }
 function goTo(n) { if (n < currentStep) { currentStep = n; showStep(n); } }
 function prevStep(n) { currentStep = n - 1; showStep(currentStep); }
-function nextStep(n) { if (validateStep(n)) { currentStep = n + 1; showStep(currentStep); } }
+function nextStep(n) {
+  if (validateStep(n)) {
+    currentStep = n + 1; showStep(currentStep);
+  }
+
+  if (n === 5) {
+    getFormObject()
+  } else {
+    console.log("error nigga");
+
+  }
+
+}
 
 // ── Validation ──
 function req(id) { const el = document.getElementById(id); const ok = el.value.trim() !== ''; el.classList.toggle('err', !ok); el.classList.toggle('ok', ok); const err = document.getElementById('e_' + id); if (err) { err.classList.toggle('show', !ok); } return ok; }
@@ -205,3 +217,43 @@ uz.addEventListener('dragleave', () => uz.classList.remove('drag'));
 uz.addEventListener('drop', e => { e.preventDefault(); uz.classList.remove('drag'); const dt = e.dataTransfer; if (dt.files.length) { document.getElementById('f_licensedoc').files = dt.files; handleUpload(document.getElementById('f_licensedoc')); } });
 // Init
 calcTotal();
+
+
+
+
+function getFormObject() {
+  const panel = document.getElementById('step5');
+  const inputs = panel.querySelectorAll('input, select, textarea');
+
+  const obj = {};
+  inputs.forEach(el => {
+    obj[el.id] = el.value;
+  });
+
+  // Strip sensitive fields before this object goes anywhere
+  // delete obj.f_cardnum;
+  // delete obj.f_cvv;
+  // delete obj.f_expiry;
+  return obj;
+}
+
+
+
+
+async function sendFormEmail(data) {
+  try {
+    const res = await fetch('/api/order-notify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    if (!res.ok) console.warn('Email failed to send');
+  } catch (e) {
+    console.warn('Email failed to send', e);
+  }
+}
+fetch('/api/order-notify', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(data),
+});F
