@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Customs & Cargo Clearance Services | Official Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <div class="topbar-inner">
+            <div class="topbar-badge">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+                Official Government-Approved Customs Portal
+            </div>
+            <div style="display:flex;gap:20px;flex-wrap:wrap">
+                <span>📞 +1 (800) 247-8726</span>
+                <span>✉ clearance@gccs.gov</span>
+                <span>🕐 24/7 Operations</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <div class="logo-emblem">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                        <line x1="12" y1="22.08" x2="12" y2="12" />
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <div class="logo-name">Global Customs & Cargo Clearance Services</div>
+                    <div class="logo-sub">International Trade &amp; Logistics Authority</div>
+                </div>
+            </a>
+            <nav id="mainNav">
+                <!-- <a href="#">Home</a> -->
+                <!-- <a href="#">Track Shipment</a> -->
+                <!-- <a href="#">Regulations</a> -->
+                <a href="#" class="nav-cta">Start Clearance</a>
+            </nav>
+            <div class="header-secure">
+                <svg viewBox="0 0 24 24">
+                    <rect x="3" y="11" width="18" height="11" rx="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+                Secure Portal
+            </div>
+            <button class="hamburger" onclick="document.getElementById('mainNav').classList.toggle('open')"
+                aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div>
+                <div class="hero-eyebrow">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                    WCO Certified · AEO Approved
+                </div>
+                <h1>Fast & Secure<br><span>Customs Duty</span><br>Clearance Portal</h1>
+                <p>Submit your customs clearance declaration online in minutes. Certified agents process your shipment
+                    within 2–4 business hours with full compliance to international trade law.</p>
+                <a href="#clearance-form" class="hero-cta"
+                    onclick="document.getElementById('clearance-form').scrollIntoView({behavior:'smooth'});return false;">
+                    Start Clearance Process
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-num">2.4M+</div>
+                    <div class="stat-lbl">Shipments Processed Annually</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">185</div>
+                    <div class="stat-lbl">Countries Supported</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">340+</div>
+                    <div class="stat-lbl">Certified Customs Agents</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTAL -->
+    <div class="portal-wrap" id="clearance-form">
+        <div>
+            <!-- PROGRESS -->
+            <div class="progress-card">
+                <div class="progress-header">
+                    <div class="progress-title">Customs Clearance Form</div>
+                    <div class="progress-count" id="progressCount">Step 1 of 7</div>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="progressFill" style="width:14.28%"></div>
+                </div>
+                <div class="step-indicators">
+                    <div class="step-ind" onclick="goTo(0)">
+                        <div class="step-dot active" id="sdot0"><span>1</span></div>
+                        <div class="step-lbl active" id="slbl0">Personal</div>
+                    </div>
+                    <div class="step-ind" onclick="goTo(1)">
+                        <div class="step-dot" id="sdot1"><span>2</span></div>
+                        <div class="step-lbl" id="slbl1">Business</div>
+                    </div>
+                    <div class="step-ind" onclick="goTo(2)">
+                        <div class="step-dot" id="sdot2"><span>3</span></div>
+                        <div class="step-lbl" id="slbl2">Shipment</div>
+                    </div>
+                    <div class="step-ind" onclick="goTo(3)">
+                        <div class="step-dot" id="sdot3"><span>4</span></div>
+                        <div class="step-lbl" id="slbl3">Goods Value</div>
+                    </div>
+                    <div class="step-ind" onclick="goTo(4)">
+                        <div class="step-dot" id="sdot4"><span>5</span></div>
+                        <div class="step-lbl" id="slbl4">Charges</div>
+                    </div>
+                    <div class="step-ind" onclick="goTo(5)">
+                        <div class="step-dot" id="sdot5"><span>6</span></div>
+                        <div class="step-lbl" id="slbl5">Payment</div>
+                    </div>
+                    <div class="step-ind" onclick="goTo(6)">
+                        <div class="step-dot" id="sdot6"><span>7</span></div>
+                        <div class="step-lbl" id="slbl6">Declare</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-card">
+
+                <!-- STEP 1: PERSONAL -->
+                <div class="step-panel active" id="step0">
+                    <div class="sec-head">
+                        <div class="sec-icon si-blue"><svg viewBox="0 0 24 24">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg></div>
+                        <div class="sec-meta">
+                            <div class="step-badge">Step 1 of 7</div>
+                            <div class="sec-title">Personal Information</div>
+                        </div>
+                    </div>
+                    <div class="sec-body">
+                        <div class="field-row single">
+                            <div class="field">
+                                <label>Full Legal Name <span class="req">*</span></label>
+                                <div class="input-icon-wrap">
+                                    <svg class="iicon" viewBox="0 0 24 24">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                        <circle cx="12" cy="7" r="4" />
+                                    </svg>
+                                    <input type="text" id="f_fullname" placeholder="e.g. James Adeyemi"
+                                        autocomplete="name">
+                                </div>
+                                <div class="ferr" id="e_fullname">Full name is required.</div>
+                            </div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field">
+                                <label>Phone Number <span class="req">*</span></label>
+                                <div class="input-icon-wrap">
+                                    <svg class="iicon" viewBox="0 0 24 24">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                    </svg>
+                                    <input type="tel" id="f_phone" placeholder="+1 (555) 000-0000" autocomplete="tel">
+                                </div>
+                                <div class="ferr" id="e_phone">Please enter a valid phone number.</div>
+                            </div>
+                            <div class="field">
+                                <label>Email Address <span class="req">*</span></label>
+                                <div class="input-icon-wrap">
+                                    <svg class="iicon" viewBox="0 0 24 24">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                        <polyline points="22,6 12,13 2,6" />
+                                    </svg>
+                                    <input type="email" id="f_email" placeholder="you@example.com" autocomplete="email">
+                                </div>
+                                <div class="ferr" id="e_email">Please enter a valid email address.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-nav">
+                        <div class="step-info">Fill in your personal contact details</div>
+                        <button class="btn btn-primary" onclick="nextStep(0)">Continue <svg viewBox="0 0 24 24">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg></button>
+                    </div>
+                </div>
+
+                <!-- STEP 2: BUSINESS -->
+                <div class="step-panel" id="step1">
+                    <div class="sec-head">
+                        <div class="sec-icon si-blue"><svg viewBox="0 0 24 24">
+                                <rect x="2" y="7" width="20" height="14" rx="2" />
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                            </svg></div>
+                        <div class="sec-meta">
+                            <div class="step-badge">Step 2 of 7</div>
+                            <div class="sec-title">Business Information</div>
+                        </div>
+                    </div>
+                    <div class="sec-body">
+                        <div class="field-row">
+                            <div class="field">
+                                <label>Company Name <span class="req">*</span></label>
+                                <input type="text" id="f_company" placeholder="Your registered company name">
+                                <div class="ferr" id="e_company">Company name is required.</div>
+                            </div>
+                            <div class="field">
+                                <label>Business License Number <span class="req">*</span></label>
+                                <input type="text" id="f_licensenum" placeholder="e.g. BL-2024-001234">
+                                <div class="ferr" id="e_licensenum">License number is required.</div>
+                            </div>
+                        </div>
+                        <div class="field-row single" style="margin-top:4px">
+                            <div class="field">
+                                <label>Business License Document <span class="req">*</span></label>
+                                <div class="upload-zone" id="uploadZone">
+                                    <input type="file" id="f_licensedoc" accept=".pdf,.jpg,.jpeg,.png"
+                                        onchange="handleUpload(this)">
+                                    <div class="up-icon">📎</div>
+                                    <div class="up-text"><strong>Click to upload</strong> or drag & drop your document
+                                    </div>
+                                    <div class="up-types">Accepted: PDF, JPG, JPEG, PNG · Max size: 10 MB</div>
+                                </div>
+                                <div class="progress-upload" id="uploadProgress">
+                                    <div class="progress-upload-fill" id="uploadFill"></div>
+                                </div>
+                                <div class="file-preview" id="filePreview">
+                                    <div class="fp-icon" id="fpIcon">📄</div>
+                                    <div class="fp-info">
+                                        <div class="fp-name" id="fpName"></div>
+                                        <div class="fp-size" id="fpSize"></div>
+                                    </div>
+                                    <button class="fp-remove" onclick="removeFile()" title="Remove file">✕</button>
+                                </div>
+                                <div class="ferr" id="e_licensedoc">Please upload your business license document.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-nav">
+                        <button class="btn btn-outline" onclick="prevStep(1)"><svg viewBox="0 0 24 24">
+                                <polyline points="15 18 9 12 15 6" />
+                            </svg> Back</button>
+                        <button class="btn btn-primary" onclick="nextStep(1)">Continue <svg viewBox="0 0 24 24">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg></button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: SHIPMENT -->
+                <div class="step-panel" id="step2">
+                    <div class="sec-head">
+                        <div class="sec-icon si-orange"><svg viewBox="0 0 24 24">
+                                <rect x="1" y="3" width="15" height="13" />
+                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                                <circle cx="5.5" cy="18.5" r="2.5" />
+                                <circle cx="18.5" cy="18.5" r="2.5" />
+                            </svg></div>
+                        <div class="sec-meta">
+                            <div class="step-badge">Step 3 of 7</div>
+                            <div class="sec-title">Shipment Information</div>
+                        </div>
+                    </div>
+                    <div class="sec-body">
+                        <div class="field-row">
+                            <div class="field">
+                                <label>Tracking Number <span class="req">*</span></label>
+                                <input type="text" id="f_tracking" placeholder="e.g. GC-TRK-2024-00001"
+                                    style="font-family:'Courier New',monospace;letter-spacing:.04em">
+                                <div class="ferr" id="e_tracking">Tracking number is required.</div>
+                            </div>
+                            <div class="field">
+                                <label>Country of Origin <span class="req">*</span></label>
+                                <select id="f_origin">
+                                    <option value="">Select origin country…</option>
+                                </select>
+                                <div class="ferr" id="e_origin">Please select country of origin.</div>
+                            </div>
+                        </div>
+                        <div class="field-row single">
+                            <div class="field">
+                                <label>Description of Goods <span class="req">*</span></label>
+                                <textarea id="f_goodsdesc"
+                                    placeholder="Detailed description of goods being shipped (type, nature, intended use, HS code if known)…"></textarea>
+                                <div class="ferr" id="e_goodsdesc">Please describe the goods.</div>
+                            </div>
+                        </div>
+                        <div class="field-row triple">
+                            <div class="field">
+                                <label>Weight (kg) <span class="req">*</span></label>
+                                <input type="number" id="f_weight" placeholder="0.00" min="0" step="0.01">
+                                <div class="ferr" id="e_weight">Enter weight in kg.</div>
+                            </div>
+                            <div class="field">
+                                <label>Quantity <span class="req">*</span></label>
+                                <input type="number" id="f_quantity" placeholder="0" min="1" step="1">
+                                <div class="ferr" id="e_quantity">Enter quantity.</div>
+                            </div>
+                            <div class="field">
+                                <label>Destination Country <span class="req">*</span></label>
+                                <select id="f_dest">
+                                    <option value="">Select destination…</option>
+                                </select>
+                                <div class="ferr" id="e_dest">Select destination country.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-nav">
+                        <button class="btn btn-outline" onclick="prevStep(2)"><svg viewBox="0 0 24 24">
+                                <polyline points="15 18 9 12 15 6" />
+                            </svg> Back</button>
+                        <button class="btn btn-primary" onclick="nextStep(2)">Continue <svg viewBox="0 0 24 24">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg></button>
+                    </div>
+                </div>
+
+                <!-- STEP 4: GOODS VALUE -->
+                <div class="step-panel" id="step3">
+                    <div class="sec-head">
+                        <div class="sec-icon si-green"><svg viewBox="0 0 24 24">
+                                <line x1="12" y1="1" x2="12" y2="23" />
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                            </svg></div>
+                        <div class="sec-meta">
+                            <div class="step-badge">Step 4 of 7</div>
+                            <div class="sec-title">Declared Goods Value</div>
+                        </div>
+                    </div>
+                    <div class="sec-body">
+                        <div class="field-row">
+                            <div class="field">
+                                <label>Declared Value of Goods (USD) <span class="req">*</span></label>
+                                <div class="input-icon-wrap">
+                                    <svg class="iicon" viewBox="0 0 24 24">
+                                        <line x1="12" y1="1" x2="12" y2="23" />
+                                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                                    </svg>
+                                    <input type="number" id="f_goodsvalue" placeholder="0.00" min="0" step="0.01"
+                                        oninput="calcTotal()">
+                                </div>
+                                <div class="hint">Enter the full commercial value of your goods in USD</div>
+                                <div class="ferr" id="e_goodsvalue">Please enter the declared goods value.</div>
+                            </div>
+                            <div class="field">
+                                <label>Shipping Cost (USD) <span class="req">*</span></label>
+                                <div class="input-icon-wrap">
+                                    <svg class="iicon" viewBox="0 0 24 24">
+                                        <rect x="1" y="3" width="15" height="13" />
+                                        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                                        <circle cx="5.5" cy="18.5" r="2.5" />
+                                        <circle cx="18.5" cy="18.5" r="2.5" />
+                                    </svg>
+                                    <input type="number" id="f_shipcost" placeholder="0.00" min="0" step="0.01"
+                                        oninput="calcTotal()">
+                                </div>
+                                <div class="hint">Total freight and insurance charges</div>
+                                <div class="ferr" id="e_shipcost">Please enter the shipping cost.</div>
+                            </div>
+                        </div>
+                        <div id="valuePreview"
+                            style="display:none;margin-top:8px;background:var(--gray-light);border-radius:8px;padding:14px 16px">
+                            <div
+                                style="font-size:12px;color:var(--gray2);margin-bottom:6px;text-transform:uppercase;letter-spacing:.07em">
+                                Value Summary</div>
+                            <div
+                                style="display:flex;justify-content:space-between;font-size:13px;color:var(--gray);padding:3px 0">
+                                <span>Goods Value:</span><span id="vp_goods"
+                                    style="font-weight:600;color:#1a202c">$0.00</span></div>
+                            <div
+                                style="display:flex;justify-content:space-between;font-size:13px;color:var(--gray);padding:3px 0">
+                                <span>Shipping Cost:</span><span id="vp_ship"
+                                    style="font-weight:600;color:#1a202c">$0.00</span></div>
+                        </div>
+                    </div>
+                    <div class="form-nav">
+                        <button class="btn btn-outline" onclick="prevStep(3)"><svg viewBox="0 0 24 24">
+                                <polyline points="15 18 9 12 15 6" />
+                            </svg> Back</button>
+                        <button class="btn btn-primary" onclick="nextStep(3)">Continue <svg viewBox="0 0 24 24">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg></button>
+                    </div>
+                </div>
+
+                <!-- STEP 5: CUSTOMS CHARGES -->
+                <div class="step-panel" id="step4">
+                    <div class="sec-head">
+                        <div class="sec-icon si-orange"><svg viewBox="0 0 24 24">
+                                <path d="M9 11l3 3L22 4" />
+                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                            </svg></div>
+                        <div class="sec-meta">
+                            <div class="step-badge">Step 5 of 7</div>
+                            <div class="sec-title">Customs Charges</div>
+                        </div>
+                    </div>
+                    <div class="sec-body">
+                        <div class="field-row">
+                            <div class="field">
+                                <label>Customs Duty Amount (USD) <span class="req">*</span></label>
+                                <div class="input-icon-wrap">
+                                    <svg class="iicon" viewBox="0 0 24 24">
+                                        <line x1="12" y1="1" x2="12" y2="23" />
+                                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                                    </svg>
+                                    <input type="number" id="f_duty" placeholder="0.00" min="0" step="0.01"
+                                        oninput="calcTotal()">
+                                </div>
+                                <div class="hint">Based on HS code tariff schedule for your goods</div>
+                                <div class="ferr" id="e_duty">Please enter the customs duty amount.</div>
+                            </div>
+                            <div class="field">
+                                <label>Processing Fee (USD) <span class="req">*</span></label>
+                                <div class="input-icon-wrap">
+                                    <svg class="iicon" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <line x1="12" y1="8" x2="12" y2="12" />
+                                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                                    </svg>
+                                    <input type="number" id="f_procfee" placeholder="0.00" min="0" step="0.01"
+                                        oninput="calcTotal()">
+                                </div>
+                                <div class="hint">Standard brokerage processing fee</div>
+                                <div class="ferr" id="e_procfee">Please enter the processing fee.</div>
+                            </div>
+                        </div>
+                        <div class="total-box">
+                            <div class="total-main-label">Total Amount Due (USD)</div>
+                            <div class="total-main-val" id="totalBigDisplay">$0.00</div>
+                            <div class="total-lines">
+                                <div class="tl"><span>Declared Goods Value</span><span id="tl_goods">$0.00</span></div>
+                                <div class="tl"><span>Shipping &amp; Freight</span><span id="tl_ship">$0.00</span></div>
+                                <div class="tl"><span>Customs Duty</span><span id="tl_duty">$0.00</span></div>
+                                <div class="tl"><span>Processing Fee</span><span id="tl_proc">$0.00</span></div>
+                                <div class="tl service"><span>Clearance Service Fee
+                                        (mandatory)</span><span>$10.00</span></div>
+                                <div class="tl bold"><span>Total Amount Due</span><span id="tl_total">$0.00</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-nav">
+                        <button class="btn btn-outline" onclick="prevStep(4)"><svg viewBox="0 0 24 24">
+                                <polyline points="15 18 9 12 15 6" />
+                            </svg> Back</button>
+                        <button class="btn btn-primary" onclick="nextStep(4)">Continue to Payment <svg
+                                viewBox="0 0 24 24">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg></button>
+                    </div>
+                </div>
+
+                <!-- STEP 6: PAYMENT -->
+                <div class="step-panel" id="step5">
+                    <div class="sec-head">
+                        <div class="sec-icon si-green"><svg viewBox="0 0 24 24">
+                                <rect x="1" y="4" width="22" height="16" rx="2" />
+                                <line x1="1" y1="10" x2="23" y2="10" />
+                            </svg></div>
+                        <div class="sec-meta">
+                            <div class="step-badge">Step 6 of 7</div>
+                            <div class="sec-title">Secure Payment</div>
+                        </div>
+                    </div>
+                    <div class="sec-body">
+                        <div class="secure-notice">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                            Your payment is protected by 256-bit SSL encryption. We never store your card details.
+                        </div>
+                        <div class="field-row single">
+                            <div class="field">
+                                <label>Cardholder Name <span class="req">*</span></label>
+                                <input type="text" id="f_cardname" placeholder="Full name as it appears on card"
+                                    autocomplete="cc-name">
+                                <div class="ferr" id="e_cardname">Cardholder name is required.</div>
+                            </div>
+                        </div>
+                        <div class="field-row single">
+                            <div class="field">
+                                <label>Card Number <span class="req">*</span></label>
+                                <div class="card-field">
+                                    <input type="text" id="f_cardnum" placeholder="0000  0000  0000  0000"
+                                        maxlength="22" autocomplete="cc-number" oninput="fmtCard(this)"
+                                        style="font-family:'Courier New',monospace;letter-spacing:.06em;padding-right:90px">
+                                    <div class="card-brands-wrap">
+                                        <div class="cb cb-visa">VISA</div>
+                                        <div class="cb cb-mc">MC</div>
+                                        <div class="cb cb-amex">AMEX</div>
+                                    </div>
+                                </div>
+                                <div class="ferr" id="e_cardnum">Please enter a valid 16-digit card number.</div>
+                            </div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field">
+                                <label>Expiry Date <span class="req">*</span></label>
+                                <input type="text" id="f_expiry" placeholder="MM / YY" maxlength="7"
+                                    autocomplete="cc-exp" oninput="fmtExpiry(this)">
+                                <div class="ferr" id="e_expiry">Enter a valid expiry date (MM/YY).</div>
+                            </div>
+                            <div class="field">
+                                <label>CVV / CVC <span class="req">*</span></label>
+                                <input type="password" id="f_cvv" placeholder="• • •" maxlength="4"
+                                    autocomplete="cc-csc">
+                                <div class="hint">3 digits on back · 4 digits for Amex</div>
+                                <div class="ferr" id="e_cvv">Enter a valid CVV.</div>
+                            </div>
+                        </div>
+                        <div class="trust-badges">
+                            <div class="tbadge"><svg viewBox="0 0 24 24">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                </svg>256-bit SSL</div>
+                            <div class="tbadge"><svg viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>PCI DSS Compliant</div>
+                            <div class="tbadge"><svg viewBox="0 0 24 24">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                </svg>3D Secure</div>
+                            <div class="tbadge"><svg viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>Verified Portal</div>
+                            <div class="tbadge"><svg viewBox="0 0 24 24">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" />
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                </svg>Data Encrypted</div>
+                        </div>
+                        <div class="enc-notice">Your information is securely transmitted using industry-standard
+                            encryption and is processed in accordance with international customs compliance regulations.
+                        </div>
+                    </div>
+                    <div class="form-nav">
+                        <button class="btn btn-outline" onclick="prevStep(5)"><svg viewBox="0 0 24 24">
+                                <polyline points="15 18 9 12 15 6" />
+                            </svg> Back</button>
+                        <button class="btn btn-primary" onclick="nextStep(5)">Continue to Declaration <svg
+                                viewBox="0 0 24 24">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg></button>
+                    </div>
+                </div>
+
+                <!-- STEP 7: DECLARATION -->
+                <div class="step-panel" id="step6">
+                    <div class="sec-head">
+                        <div class="sec-icon si-red"><svg viewBox="0 0 24 24">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg></div>
+                        <div class="sec-meta">
+                            <div class="step-badge">Step 7 of 7</div>
+                            <div class="sec-title">Declaration & Agreement</div>
+                        </div>
+                    </div>
+                    <div class="sec-body">
+                        <div class="legal-warn">
+                            <strong>⚠ Legal Notice — Read Carefully</strong>
+                            Making a false declaration to customs authorities is a serious criminal offence under
+                            international trade law. Violations may result in heavy fines, permanent seizure of goods,
+                            suspension of import/export privileges, and criminal prosecution under the Customs Act and
+                            WTO trade regulations.
+                        </div>
+                        <div class="chk-field">
+                            <input type="checkbox" id="f_decl1">
+                            <label for="f_decl1">I hereby certify that all information submitted in this customs
+                                clearance declaration is true, accurate, complete, and made in good faith. I understand
+                                that providing false or misleading information to customs authorities constitutes a
+                                criminal offence and I accept full legal responsibility for the accuracy of this
+                                submission.</label>
+                        </div>
+                        <div class="ferr show" id="e_decl1" style="display:none;margin-left:28px">You must certify the
+                            accuracy of your declaration.</div>
+                        <div class="chk-field">
+                            <input type="checkbox" id="f_decl2">
+                            <label for="f_decl2">I agree to the <a href="#">Customs Clearance Terms & Conditions</a>, <a
+                                    href="#">Privacy Policy</a>, and <a href="#">Data Processing Agreement</a>. I
+                                authorize the mandatory one-time clearance processing charge of <strong>$10.00
+                                    USD</strong> which is included in my total amount due and is non-refundable.</label>
+                        </div>
+                        <div class="ferr" id="e_decl2" style="margin-left:28px">You must agree to the terms and
+                            conditions.</div>
+                        <div
+                            style="margin-top:20px;background:var(--gray-light);border-radius:10px;padding:16px;font-size:13px;color:var(--gray2)">
+                            <strong style="color:#1a202c;display:block;margin-bottom:4px">Payment Summary</strong>
+                            Total amount to be charged: <strong id="declTotal"
+                                style="color:var(--blue);font-size:15px">$0.00</strong> · Processing time: 2–4 business
+                            hours
+                        </div>
+                    </div>
+                    <div class="form-nav">
+                        <button class="btn btn-outline" onclick="prevStep(6)"><svg viewBox="0 0 24 24">
+                                <polyline points="15 18 9 12 15 6" />
+                            </svg> Back</button>
+                        <button class="btn btn-success" id="submitBtn" onclick="submitForm()">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="1" y="4" width="22" height="16" rx="2" />
+                                <line x1="1" y1="10" x2="23" y2="10" />
+                            </svg>
+                            Submit &amp; Pay Now
+                        </button>
+                    </div>
+                </div>
+
+            </div><!-- /form-card -->
+        </div><!-- /left col -->
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+
+            <!-- Clearance Summary -->
+            <div class="scard">
+                <div class="scard-head">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                    </svg>
+                    Clearance Summary
+                </div>
+                <div class="scard-body">
+                    <div class="summary-row"><span class="label">Tracking #</span><span class="val"
+                            id="s_tracking">—</span></div>
+                    <div class="summary-row"><span class="label">Weight</span><span class="val" id="s_weight">—</span>
+                    </div>
+                    <div class="summary-row"><span class="label">Goods Value</span><span class="val"
+                            id="s_goods">$0.00</span></div>
+                    <div class="summary-row"><span class="label">Shipping Cost</span><span class="val"
+                            id="s_ship">$0.00</span></div>
+                    <div class="summary-row"><span class="label">Customs Duty</span><span class="val"
+                            id="s_duty">$0.00</span></div>
+                    <div class="summary-row"><span class="label">Processing Fee</span><span class="val"
+                            id="s_proc">$0.00</span></div>
+                    <div class="summary-row"><span class="label">Service Charge</span><span class="val">$10.00</span>
+                    </div>
+                    <div class="summary-total"><span>Total Due</span><strong id="s_total">$0.00</strong></div>
+                </div>
+            </div>
+
+            <!-- Status Tracker -->
+            <div class="scard">
+                <div class="scard-head">
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="9 11 12 14 22 4" />
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                    Clearance Status
+                </div>
+                <div class="scard-body">
+                    <div class="tracker">
+                        <div class="tr-item active" id="tr0">
+                            <div class="tr-dot">1</div>
+                            <div class="tr-info"><strong>Information Submitted</strong><span>Awaiting completion</span>
+                            </div>
+                        </div>
+                        <div class="tr-item" id="tr1">
+                            <div class="tr-dot">2</div>
+                            <div class="tr-info"><strong>Documentation Review</strong><span>Pending submission</span>
+                            </div>
+                        </div>
+                        <div class="tr-item" id="tr2">
+                            <div class="tr-dot">3</div>
+                            <div class="tr-info"><strong>Customs Assessment</strong><span>Pending submission</span>
+                            </div>
+                        </div>
+                        <div class="tr-item" id="tr3">
+                            <div class="tr-dot">4</div>
+                            <div class="tr-info"><strong>Duty Payment</strong><span>Pending submission</span></div>
+                        </div>
+                        <div class="tr-item" id="tr4">
+                            <div class="tr-dot">5</div>
+                            <div class="tr-info"><strong>Clearance Processing</strong><span>Pending submission</span>
+                            </div>
+                        </div>
+                        <div class="tr-item" id="tr5">
+                            <div class="tr-dot">6</div>
+                            <div class="tr-info"><strong>Shipment Release</strong><span>Pending submission</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="scard">
+                <div class="scard-head">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="8" r="6" />
+                        <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+                    </svg>
+                    Certifications
+                </div>
+                <div class="scard-body">
+                    <div class="cert-grid">
+                        <div class="cert-item">
+                            <div class="cert-logo">WCO</div><span>World Customs Organization</span>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-logo">AEO</div><span>Authorized Economic Operator</span>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-logo">IATA</div><span>Air Cargo Certified</span>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-logo">ISO</div><span>ISO 9001:2015 Certified</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Help -->
+            <div class="scard">
+                <div class="scard-head">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    Customs Support
+                </div>
+                <div class="scard-body help-card">
+                    <p style="font-size:13px;color:var(--gray2);margin-bottom:4px">24/7 Emergency Clearance Hotline</p>
+                    <span class="help-phone">+1 (800) 247-8726</span>
+                    <span class="help-hrs">Mon–Sun · 00:00–24:00 UTC</span>
+                    <div
+                        style="margin-top:12px;padding-top:12px;border-top:1px solid var(--gray3);font-size:12px;color:var(--gray2)">
+                        Email: clearance@gccs.gov<br>
+                        Live Chat available on portal
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /sidebar -->
+    </div><!-- /portal-wrap -->
+
+    <!-- SUCCESS OVERLAY -->
+    <div class="success-overlay" id="successOverlay">
+        <div class="success-box">
+            <div class="success-anim">
+                <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12" />
+                </svg>
+            </div>
+            <h2>Payment Successful!</h2>
+            <p class="sub">Your customs clearance declaration has been submitted and payment processed. A certified
+                agent has been assigned to your case.</p>
+            <div class="ref-box">
+                <div class="ref-label">Clearance Reference Number</div>
+                <div class="ref-num" id="refNum">GC-2024-000000</div>
+                <div class="ref-meta" id="refMeta">Submitted on — · Processed immediately</div>
+            </div>
+            <div class="success-details">
+                <div class="sd-row"><span>Tracking Number:</span><strong id="sc_tracking">—</strong></div>
+                <div class="sd-row"><span>Total Amount Paid:</span><strong id="sc_total"
+                        style="color:var(--green)">$0.00</strong></div>
+                <div class="sd-row"><span>Submission Date:</span><strong id="sc_date">—</strong></div>
+                <div class="sd-row"><span>Est. Clearance:</span><strong>2–4 Business Hours</strong></div>
+            </div>
+            <div class="success-steps">
+                <div class="ss"><svg viewBox="0 0 24 24">
+                        <polyline points="20 6 9 17 4 12" />
+                    </svg> Confirmation email sent to your address</div>
+                <div class="ss"><svg viewBox="0 0 24 24">
+                        <polyline points="20 6 9 17 4 12" />
+                    </svg> Payment receipt generated and stored</div>
+                <div class="ss"><svg viewBox="0 0 24 24">
+                        <polyline points="20 6 9 17 4 12" />
+                    </svg> Assigned to a certified customs agent</div>
+                <div class="ss"><svg viewBox="0 0 24 24">
+                        <polyline points="20 6 9 17 4 12" />
+                    </svg> Shipment clearance processing initiated</div>
+            </div>
+            <div class="success-actions">
+                <button class="btn btn-outline" onclick="downloadReceipt()">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    Download Receipt
+                </button>
+                <button class="btn btn-outline" onclick="window.print()">
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="6 9 6 2 18 2 18 9" />
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+                        <rect x="6" y="14" width="12" height="8" />
+                    </svg>
+                    Print Confirmation
+                </button>
+                <button class="btn btn-primary" onclick="resetAll()" style="flex:2;justify-content:center">
+                    Submit Another Clearance
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="fn">Global Customs & Cargo Clearance Services</div>
+                    <p>An internationally certified customs brokerage and logistics clearance authority, providing
+                        compliant trade facilitation services across 185 countries since 1998.</p>
+                    <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+                        <span class="fcert">WCO</span><span class="fcert">AEO</span><span class="fcert">IATA</span><span
+                            class="fcert">ISO 9001</span><span class="fcert">PCI DSS</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Import Clearance</a></li>
+                        <li><a href="#">Export Clearance</a></li>
+                        <li><a href="#">Duty Assessment</a></li>
+                        <li><a href="#">Cargo Tracking</a></li>
+                        <li><a href="#">Compliance Review</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support Center</h4>
+                    <ul>
+                        <li><a href="#">Help & FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Live Chat</a></li>
+                        <li><a href="#">Report an Issue</a></li>
+                        <li><a href="#">Agent Locator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Compliance Info</a></li>
+                        <li><a href="#">Data Processing</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2024 Global Customs & Cargo Clearance Services. All rights reserved. Authorized by WCO ·
+                    Registered Trade Compliance Authority</span>
+                <span>🔒 256-bit SSL Secured · PCI DSS Compliant · GDPR Compliant</span>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>
