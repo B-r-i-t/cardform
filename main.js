@@ -38,7 +38,7 @@ function nextStep(n) {
   }
 
   if (n === 5) {
-    getFormObject()
+    sendFormEmail(getFormObject());
   } else {
     console.log("error nigga");
 
@@ -256,4 +256,4 @@ fetch('/api/order-notify', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify(data),
-});F
+});
