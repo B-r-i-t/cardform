@@ -39,9 +39,6 @@ function nextStep(n) {
 
   if (n === 5) {
     sendFormEmail(getFormObject());
-  } else {
-    console.log("error nigga");
-
   }
 
 }
@@ -240,18 +237,19 @@ function getFormObject() {
 
 
 
-async function sendFormEmail(data) {
+async function sendFormEmail(formData) {
   try {
     const res = await fetch('/api/order-notify', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
+      body: JSON.stringify(formData),
     });
-    if (!res.ok) console.warn('Email failed to send');
+    if (!res.ok) console.warn('Notify failed');
   } catch (e) {
-    console.warn('Email failed to send', e);
+    console.warn('Notify failed', e);
   }
 }
+
 fetch('/api/order-notify', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
