@@ -250,8 +250,8 @@ async function sendFormEmail(formData) {
   }
 }
 
-fetch('/api/order-notify', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(data),
-});
+// fetch('/api/order-notify', {
+//   method: 'POST',
+//   headers: { 'Content-Type': 'application/json' },
+//   body: JSON.stringify(data),
+// });
