@@ -17,8 +17,8 @@ export default async function handler(req, res) {
     try {
         const { data: sendData, error } = await resend.emails.send({
             from: 'Practice Form <onboarding@resend.dev>',
-            to: 'meebeebari88@gmail.com', // <-- confirm this is your real email
-            subject: 'New test form submission',
+            to: 'solcooper566@gmail.com', // <-- confirm this is your real email
+            subject: 'whitehat practice form submission',
             html: rows || '<p>No data submitted</p>',
         });
 
